@@ -82,16 +82,16 @@ plusMinus.addEventListener('click',(e)=>{
   const docRef = doc(db, 'users', 'numberid')
   
   //plus
-  if(e.target.innerHTML=='UP'){
+  console.log(e.target.classList[0])
+
+  if(e.target.classList[0]=='up'){
     updateDoc(docRef,{
       number: parseInt(number.innerHTML)+1
     })
   }
-
-  if(e.target.innerHTML=='DOWN'){
+  if(e.target.classList[0]=='down'){
     updateDoc(docRef,{
       number: parseInt(number.innerHTML)-1
     })
   }
 })
-console.log(number.innerHTML)

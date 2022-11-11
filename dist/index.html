@@ -5,38 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Firebase 9</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../css/styles.css">
   <link rel="shortcut icon" href="#">
 </head>
 <body>
-  <h1>Firebase 9</h1>
-<div class="form-wrapper"> 
-  <form class="register">
-    <label for="username">Username:</label>
-    <input type="text" name="username" required>
-    <label for="password">Password:</label>
-    <input type="text" name="password" required>
-    <button>Register user</button>
-  </form>
+<div class="form-wrapper pt-3"> 
+  <h1 class="pt-1">Firebase 9</h1>
 
   <form class="login">
-    <label for="username">Username:</label>
-    <input type="text" name="username" required>
-    <label for="password">Password:</label>
-    <input type="text" name="password" required>
-    <button>Log in</button>
+    <input type="text" name="username" placeholder="Username" required>
+    <input type="text" name="password" placeholder="Password" required>
+    <button class="btn">Log in</button>
   </form>
+  <br>
+  <form class="register">
+    <input type="text" name="username" placeholder="Username" required>
+    <input type="text" name="password" placeholder="Password" required>
+    <button class="btn">Register user</button>
+  </form>
+
+
 </div>
 
 <div class="teller text-center d-none">
-  <h1 >NUMBER</h1>
+  <h1 class="number-text" >NUMBER</h1>
   <h2 class="number">0</h2>
   <div class="plusMinus">
-    <p class="plus">UP</p>
-    <p class="minus">DOWN</p>
-  </div>
+    <i class="up fa-solid fa-arrow-up fa-4x"></i>
+    <i class="down fa-solid fa-arrow-down fa-4x"></i>  </div>
 </div>
 
 
-  <script src="bundle.js"></script>
+<script src="bundle.js"></script>
 </body>
 </html>
