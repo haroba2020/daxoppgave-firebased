@@ -27,7 +27,9 @@ const q = query(colRef, orderBy('createdAt'))
 
 
 const number = document.querySelector('h2')
+let localNumber = 0 
 const teller = document.querySelector('.teller')
+
 
 onSnapshot(colRef, (snapshot) => {
   let users = []
@@ -37,6 +39,7 @@ onSnapshot(colRef, (snapshot) => {
   console.log(users)
   users.forEach((item) => {
     if(item.number){
+      localNumber = item.number
       number.innerHTML=item.number
     }
   })
@@ -57,6 +60,7 @@ registerForm.addEventListener('submit', (e) => {
       registerForm.reset()
     })
 })
+
 const formWrapper = document.querySelector('.form-wrapper')
 const loginForm = document.querySelector('.login')
 loginForm.addEventListener('submit', (e) => {
@@ -84,14 +88,30 @@ plusMinus.addEventListener('click',(e)=>{
   //plus
   console.log(e.target.classList[0])
 
-  if(e.target.classList[0]=='up'){
+switch (e.target.classList[0]) {
+  case 'up':
     updateDoc(docRef,{
-      number: parseInt(number.innerHTML)+1
-    })
-  }
-  if(e.target.classList[0]=='down'){
+      number: localNumber+1
+      })
+      break
+
+  case 'down':
     updateDoc(docRef,{
-      number: parseInt(number.innerHTML)-1
-    })
-  }
+      number: localNumber-1
+      })
+      break
+  default:
+    break;
+}
+
+  // if(e.target.classList[0]=='up'){
+  //   updateDoc(docRef,{
+  //     number: localNumber+1
+  //   })
+  // }
+  // if(e.target.classList[0]=='down'){
+  //   updateDoc(docRef,{
+  //     number: localNumber-1
+  //   })
+  // }
 })
